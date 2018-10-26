@@ -43,7 +43,7 @@ include('detectidle.php');
         <div id="custom" class="navbar navbar-default" role="navigation" style="z-index:100;">
             <div class="navbar-header">
                 <img src="../images/laptopicon.png" alt="" style="height:30px; width:30px;margin-top:10px;"/>
-                <a class="navbar-brand" href="#"> 
+                <a class="navbar-brand" href="#">
                     Web Dev Club
                 </a>
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-menubuilder" style = "margin-top:7px;">                    <span class="icon-bar"></span>
@@ -55,7 +55,7 @@ include('detectidle.php');
                 <ul class="nav navbar-nav navbar-right">
                     <li><a href="landingpage.php" style="height:20px;"> Main Terminal</a></li>
                     <li><a href="learn/cool/start.php" style="height:20px;"> Learn </a></li>
-                    <li><a href="codeeditorpage.php" style="height:20px;"> Code </a></li>        
+                    <li><a href="codeeditorpage.php" style="height:20px;"> Code </a></li>
                     <li><a href="members.php" style="height:20px;"> Members </a></li>
                     <li><a href="newspage.php" style="height:20px;"> News</a></li>
                     <li id="last_menu_item" class="dropdown"><a id = "dropdownlink" style="height:20px;" class = "dropdown-toggle" data-toggle ="dropdown" href="account.php">My Account <b class = "caret"></b></a>
@@ -86,7 +86,7 @@ include('detectidle.php');
         </div>
 
         <div id="title0_1">
-            <h1> 
+            <h1>
                 <?php
                 echo $_SESSION['SESS_FIRST_NAME'];
                 echo "'s Account";
@@ -133,7 +133,7 @@ include('detectidle.php');
                     <?php
                     if ($_SESSION['SESS_TYPE'] == "T") {
                         echo "<p style = 'font-size: 15px; color:grey;'>As a club cofounder or admin, you have special privileges. Click the link below to access the secret admin page.</p>";
-                        echo "<a target = 'secretadminpage' href = 'Priveleges/test.php' style = 'text-decoration:none;'><h3 style = 'color:gold; text-shadow: 1px 3px orange;'>Club Master Privelages</h3></a>";
+                        echo "<a target = 'secretadminpage' href = 'priveleges/test.php' style = 'text-decoration:none;'><h3 style = 'color:gold; text-shadow: 1px 3px orange;'>Club Master Privelages</h3></a>";
                         echo "<br>";
                     }
                     ?>
@@ -175,6 +175,6 @@ include('detectidle.php');
         </footer>
         <div style="background:black; text-align:center; color:white!important; width:100%; padding:20px;">
             <p>Content Copyright 2015 Anthony Bao and Richard Bao. All rights reserved</p>
-        </div> 
+        </div>
     </body>
 </html>
