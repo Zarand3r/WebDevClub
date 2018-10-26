@@ -78,7 +78,7 @@ p{
 }
 @media all and (max-width:500px){
     #home h3{
-        font-size:22px;  
+        font-size:22px;
     }
 }
 #objective{
@@ -110,14 +110,14 @@ footer h1, footer h2, footer h3, footer p,footer a{
     font-family:Impact, Courier;
 }
 
-.banner { 
+.banner {
     overflow: auto;
     margin-top:5px;
     position:absolute;
     width:100%;
     z-index:-10;
 }
-.banner li { 
+.banner li {
     list-style: none;
     background:blue;
     height:100vh;
@@ -125,35 +125,35 @@ footer h1, footer h2, footer h3, footer p,footer a{
     margin-left:-40px;
     margin-right:40px;
 }
-.banner ul li { 
+.banner ul li {
     float: left;
 }
 .banner ul{
     margin-top:0;
 }
 #wallPaperSlide1{
-    background: url('../images/RentAidWallPaper.jpg') no-repeat scroll center top transparent;
+    background: url('images/RentAidWallPaper.jpg') no-repeat scroll center top transparent;
     background-position: 0% 23%;
     background-size: cover;
 }
 
 #wallPaperSlide2{
-    background: url('../images/img2.jpg') no-repeat scroll center top transparent;
+    background: url('images/img2.jpg') no-repeat scroll center top transparent;
     background-position: 0% 23%;
     background-size: cover;
 }
 #wallPaperSlide3{
-    background: url('../images/img3.jpg') no-repeat scroll center top transparent;
+    background: url('images/img3.jpg') no-repeat scroll center top transparent;
     background-position: 0% 23%;
     background-size: cover;
 }
 #wallPaperSlide4{
-    background: url('../images/img4.jpg') no-repeat scroll center top transparent;
+    background: url('images/img4.jpg') no-repeat scroll center top transparent;
     background-position: 0% 23%;
     background-size: cover;
 }
 #wallPaperSlide5{
-    background: url('../images/img5.png') no-repeat scroll center top transparent;
+    background: url('images/img5.png') no-repeat scroll center top transparent;
     background-position: 0% 23%;
     background-size: cover;
 }
