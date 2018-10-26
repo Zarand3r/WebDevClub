@@ -8,9 +8,8 @@ include('detectidle.php');
 
 require_once('../account/login/config.php');
 
-$link = mysql_connect(DB_HOST, DB_USER, DB_PASSWORD);
-mysql_select_db(DB_DATABASE, $link);
+$link = mysqli_connect($link, DB_HOST, DB_USER, DB_PASSWORD, DB_DATABASE);
 
-$sourcecode = mysql_query("SELECT source FROM pagecodes WHERE name ='news'");
-$source = mysql_fetch_assoc($sourcecode);
+$sourcecode = mysqli_query($link, "SELECT source FROM pagecodes WHERE name ='news'");
+$source = mysqli_fetch_assoc($sourcecode);
 echo $source['source'];
