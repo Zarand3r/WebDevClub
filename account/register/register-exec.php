@@ -36,7 +36,7 @@
 	//Check for duplicate username
 	if($username != '') {
 		$qry = "SELECT * FROM users WHERE username='$username'";
-		$result = mysqli_query($qry);
+		$result = mysqli_query($link, $qry);
 		if($result) {
 			if(mysqli_num_rows($result) > 0) {
                             $error = "Username Taken";
