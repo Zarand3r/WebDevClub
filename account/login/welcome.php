@@ -18,7 +18,7 @@ if (!isset($_SESSION['SESS_MEMBER_ID'])) {
     <body>
         <br><br>
         <div id="greeting">
-            <h1>Welcome 
+            <h1>Welcome
                 <?php
                 echo $_SESSION['SESS_FIRST_NAME'];
                 ?>
@@ -92,10 +92,9 @@ if (!isset($_SESSION['SESS_MEMBER_ID'])) {
         <div id = "onlineCounter">
             <?php
             require('config.php');
-            $link = mysql_connect(DB_HOST, DB_USER, DB_PASSWORD);
-            mysql_select_db(DB_DATABASE, $link);
-            $result = mysql_query("SELECT * FROM active", $link);
-            $num_rows = mysql_num_rows($result);
+            $link = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_DATABASE);
+            $result = mysqli_query($link, "SELECT * FROM active");
+            $num_rows = mysqli_num_rows($result);
             echo "<h3>";
             if ($num_rows == 1) {
                 echo "$num_rows person is online\n";
@@ -105,8 +104,8 @@ if (!isset($_SESSION['SESS_MEMBER_ID'])) {
             echo "</h3>";
             echo "<div>";
             echo "<table>"; // start a table tag in the HTML
-            while ($row = mysql_fetch_array($result)) {   //Creates a loop to loop through results
-                $duration = date('m/d/Y H:i:s', $row['time']);
+            while ($row = mysqli_fetch_array($result)) {   //Creates a loop to loop through results
+                $duration = date('m/d/Y H:i:s', $row['timelog']);
                 echo "<tr><td>" . $row['username'] . " <span style = 'color:lightgrey;'>since $duration</span></td></tr>";  //$row['index'] the index here is a field name
             }
             echo "</table>"; //Close the table in HTML
