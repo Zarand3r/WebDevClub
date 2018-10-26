@@ -49,7 +49,7 @@ if (isset($_POST['submit'])) {
 
 
     //Create query
-    $qry = "SELECT * FROM users WHERE BINARY username='$username' AND password='" . md5($password) . "'";
+    $qry = "SELECT * FROM users WHERE BINARY username='$username' AND pass='" . md5($password) . "'";
     $result = mysql_query($qry);
 
     //Check whether the query was successful or not
@@ -81,9 +81,9 @@ if (isset($_POST['submit'])) {
     }
 }
 
-   
-    
-    
-    
+
+
+
+
       //$active = isset($_POST['stayLoggedIn']) && $_POST['stayLoggedIn']  ? "1" : "0";
       //$_SESSION['SESS_ACTIVE'] = $active;
