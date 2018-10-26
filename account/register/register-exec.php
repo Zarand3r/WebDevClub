@@ -6,7 +6,7 @@
 
         if (isset($_POST['Submit'])) {
 
-	require_once('../Login/config.php');
+	require_once('../login/config.php');
 
 
 	//Connect to mysql server
