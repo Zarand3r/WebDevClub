@@ -16,29 +16,29 @@
           . "<th style = 'width:10%;'>Status</th>"
           . "<th style = 'width:20%;'>Score</th>"
       . "</tr></thead>";
-  echo "<tbody>";
-  while ($row = mysqli_fetch_array($result)) {   //Creates a loop to loop through results
-          $username = $row['username'];
-          $status = "OFFLINE";
-          $color = "color: red;";
-          $resultActive = mysqli_query("SELECT * FROM active WHERE username='$username'");
-          $rowActive = mysqli_fetch_array($resultActive);
-          if(mysqli_num_rows($resultActive)>0)   {
-              $status = "ONLINE";
-              $color = "color: green;";
-              if(time()-$rowActive['last']>900)   {
-                  $status = "IDLE";
-                  $color = "color: brown;";
-              }
-          }
-      echo "<tr>"
-              . "<td style = 'width:10%;'># " . $rankindex++ . "</td>"
-              . "<strong><td style = 'font-family: Comic Sans MS, cursive, sans-serif; color:blue; width:20%;'>" . $row['firstname'] . "</td>"
-              . "<td style = 'font-family: Comic Sans MS, cursive, sans-serif;color:blue; width:20%;'>" . $row['lastname'] . "</td></strong>"
-              . "<td style = 'color:purple; width:20%; font-style:oblique'>" . $row['username'] . "</td>"
-              . "<td style = 'width:10%; $color'>" . $status . "</td>"
-              . "<td style = 'width:20%; color: gold;'>" . $row['score'] . " webbits</td>"
-          . "</tr>";  //$row['index'] the index here is a field name
-  }
-  echo "</tbody>";
+  // echo "<tbody>";
+  // while ($row = mysqli_fetch_array($result)) {   //Creates a loop to loop through results
+  //         $username = $row['username'];
+  //         $status = "OFFLINE";
+  //         $color = "color: red;";
+  //         $resultActive = mysqli_query("SELECT * FROM active WHERE username='$username'");
+  //         $rowActive = mysqli_fetch_array($resultActive);
+  //         if(mysqli_num_rows($resultActive)>0)   {
+  //             $status = "ONLINE";
+  //             $color = "color: green;";
+  //             if(time()-$rowActive['last']>900)   {
+  //                 $status = "IDLE";
+  //                 $color = "color: brown;";
+  //             }
+  //         }
+  //     echo "<tr>"
+  //             . "<td style = 'width:10%;'># " . $rankindex++ . "</td>"
+  //             . "<strong><td style = 'font-family: Comic Sans MS, cursive, sans-serif; color:blue; width:20%;'>" . $row['firstname'] . "</td>"
+  //             . "<td style = 'font-family: Comic Sans MS, cursive, sans-serif;color:blue; width:20%;'>" . $row['lastname'] . "</td></strong>"
+  //             . "<td style = 'color:purple; width:20%; font-style:oblique'>" . $row['username'] . "</td>"
+  //             . "<td style = 'width:10%; $color'>" . $status . "</td>"
+  //             . "<td style = 'width:20%; color: gold;'>" . $row['score'] . " webbits</td>"
+  //         . "</tr>";  //$row['index'] the index here is a field name
+  // }
+  // echo "</tbody>";
   echo "</table>"; //Close the table in HTML
