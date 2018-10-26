@@ -10,7 +10,8 @@ if (isset($_POST['submit'])) {
     require_once('config.php');
 
     //Connect to mysql server
-    $link = mysql_connect(DB_HOST, DB_USER, DB_PASSWORD);
+    // $link = mysql_connect(DB_HOST, DB_USER, DB_PASSWORD);
+    $link = mysql_connect("us-cdbr-iron-east-01.cleardb.net", "ba4712a6c49735", "af25d1e1");
     if (!$link) {
         die('Failed to connect to server: ' . mysql_error());
     }
