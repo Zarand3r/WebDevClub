@@ -20,7 +20,7 @@
                         $username = $row['username'];
                         $status = "OFFLINE";
                         $color = "color: red;";
-                        $resultActive = mysqli_query("SELECT * FROM active WHERE BINARY username='$username'");
+                        $resultActive = mysqli_query("SELECT * FROM active WHERE username='$username'");
                         $rowActive = mysqli_fetch_array($resultActive);
                         if(mysqli_num_rows($resultActive)>0)   {
                             $status = "ONLINE";
