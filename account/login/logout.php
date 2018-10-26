@@ -4,7 +4,7 @@
 session_start();
 
 require ('config.php');
-$link = mysqli_connect($link, DB_HOST, DB_USER, DB_PASSWORD, DB_DATABASE);
+$link = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_DATABASE);
 $sessusername = $_SESSION['SESS_USER_NAME'];
 $sql="DELETE FROM active WHERE username='$sessusername'";
 mysqli_query($link, $sql);
