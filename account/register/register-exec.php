@@ -9,14 +9,14 @@
 	require_once('../login/config.php');
 
 
-	//Connect to mysql server
+	//Connect to mysqli server
 	$link = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD);
 	if(!$link) {
-		die('Failed to connect to server: ' . mysql_error());
+		die('Failed to connect to server: ' . mysqli_error());
 	}
 
 	//Select database
-	$db = mysql_select_db(DB_DATABASE, $link);
+	$db = mysqli_select_db(DB_DATABASE, $link);
 	if(!$db) {
 		die("Unable to select database");
 	}
@@ -27,7 +27,7 @@
 		if(get_magic_quotes_gpc()) {
 			$str = stripslashes($str);
 		}
-		return mysql_real_escape_string($str);
+		return mysqli_real_escape_string($str);
 	}
 
 	//Sanitize the POST values
@@ -42,9 +42,9 @@
 	//Check for duplicate username
 	if($username != '') {
 		$qry = "SELECT * FROM users WHERE username='$username'";
-		$result = mysql_query($qry);
+		$result = mysqli_query($qry);
 		if($result) {
-			if(mysql_num_rows($result) > 0) {
+			if(mysqli_num_rows($result) > 0) {
                             $error = "Username Taken";
                             session_destroy();
                                 //die("Username Taken");
@@ -61,7 +61,7 @@
 	if($error==""&&$wrongcode=="")  {
 	//Create INSERT query
 	$qry = "INSERT INTO users(firstname, lastname, username, pass, email) VALUES('$fname','$lname','$username','".md5($password)."','$email')";
-	$result = @mysql_query($qry);
+	$result = @mysqli_query($qry);
 
 	//Check whether the query was successful or not
 	if($result) {

@@ -10,14 +10,13 @@ if (isset($_POST['submit'])) {
     require_once('config.php');
 
     //Connect to mysql server
-    // $link = mysql_connect(DB_HOST, DB_USER, DB_PASSWORD);
-    $link = mysqli_connect("us-cdbr-iron-east-01.cleardb.net", "ba4712a6c49735", "af25d1e1");
+    $link = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD);
     if (!$link) {
-        die('Failed to connect to server: ' . mysql_error());
+        die('Failed to connect to server: ' . mysqli_error());
     }
 
     //Select database
-    $db = mysql_select_db(DB_DATABASE, $link);
+    $db = mysqli_select_db(DB_DATABASE, $link);
     if (!$db) {
         die("Unable to select database");
     }
@@ -28,7 +27,7 @@ if (isset($_POST['submit'])) {
         if (get_magic_quotes_gpc()) {
             $str = stripslashes($str);
         }
-        return mysql_real_escape_string($str);
+        return mysqli_real_escape_string($str);
     }
 
     //Sanitize the POST values
@@ -51,22 +50,22 @@ if (isset($_POST['submit'])) {
 
     //Create query
     $qry = "SELECT * FROM users WHERE BINARY username='$username' AND pass='" . md5($password) . "'";
-    $result = mysql_query($qry);
+    $result = mysqli_query($qry);
 
     //Check whether the query was successful or not
     if ($result) {
-        if (mysql_num_rows($result) == 1) {
+        if (mysqli_num_rows($result) == 1) {
             //Login Successful
             session_regenerate_id();
-            $member = mysql_fetch_assoc($result);
+            $member = mysqli_fetch_assoc($result);
             $_SESSION['SESS_MEMBER_ID'] = $member['id'];
             $_SESSION['SESS_USER_NAME'] = $member['username'];
             $_SESSION['SESS_FIRST_NAME'] = $member['firstname'];
             $_SESSION['SESS_LAST_NAME'] = $member['lastname'];
             $_SESSION['SESS_EMAIL_ADDRESS'] = $member['email'];
             $_SESSION['SESS_TYPE'] = $member['type'];
-            if (mysql_num_rows(mysql_query("SELECT * FROM active WHERE BINARY username='$username'")) == 0) {
-                mysql_query("INSERT INTO active(username, time) VALUES('$username','$time')");
+            if (mysqli_num_rows(mysqli_query("SELECT * FROM active WHERE BINARY username='$username'")) == 0) {
+                mysqli_query("INSERT INTO active(username, time) VALUES('$username','$time')");
             }
             session_write_close();
             header("location: welcome.php");
