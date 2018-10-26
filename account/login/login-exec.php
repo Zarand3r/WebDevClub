@@ -16,7 +16,7 @@ if (isset($_POST['submit'])) {
     }
 
     //Select database
-    $db = mysqli_select_db(DB_DATABASE, $link);
+    $db = mysqli_select_db($link, DB_DATABASE);
     if (!$db) {
         die("Unable to select database");
     }
