@@ -16,7 +16,7 @@ if (isset($_POST['submit'])) {
     }
 
     //Function to sanitize values received from the form. Prevents SQL injection
-    function clean($str) {
+    function clean($link, $str) {
         $str = @trim($str);
         if (get_magic_quotes_gpc()) {
             $str = stripslashes($str);
@@ -25,8 +25,8 @@ if (isset($_POST['submit'])) {
     }
 
     //Sanitize the POST values
-    $username = clean($_POST['username']);
-    $password = clean($_POST['password']);
+    $username = clean($link, $_POST['username']);
+    $password = clean($link, $_POST['password']);
     $time = time()+18000;
     //Input Validations
     if ($username == "" && $password !== "") {
