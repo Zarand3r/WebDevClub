@@ -16,7 +16,7 @@
 	}
 
 	//Function to sanitize values received from the form. Prevents SQL injection
-	function clean($str) {
+	function clean($link, $str) {
 		$str = @trim($str);
 		if(get_magic_quotes_gpc()) {
 			$str = stripslashes($str);
@@ -25,13 +25,13 @@
 	}
 
 	//Sanitize the POST values
-	$fname = clean($_POST['fname']);
-	$lname = clean($_POST['lname']);
-	$username = clean($_POST['username']);
-	$password = clean($_POST['password']);
-	$cpassword = clean($_POST['cpassword']);
-        $email = clean($_POST['email']);
-        $code = clean($_POST['secretcode']);
+	$fname = clean($link, $_POST['fname']);
+	$lname = clean($link, $_POST['lname']);
+	$username = clean($link, $_POST['username']);
+	$password = clean($link, $_POST['password']);
+	$cpassword = clean($link, $_POST['cpassword']);
+        $email = clean($link, $_POST['email']);
+        $code = clean($link, $_POST['secretcode']);
 
 	//Check for duplicate username
 	if($username != '') {
