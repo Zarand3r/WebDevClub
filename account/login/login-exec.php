@@ -27,7 +27,7 @@ if (isset($_POST['submit'])) {
         if (get_magic_quotes_gpc()) {
             $str = stripslashes($str);
         }
-        return mysqli_real_escape_string($str);
+        return mysqli_real_escape_string($link, $str);
     }
 
     //Sanitize the POST values
@@ -50,7 +50,7 @@ if (isset($_POST['submit'])) {
 
     //Create query
     $qry = "SELECT * FROM users WHERE BINARY username='$username' AND pass='" . md5($password) . "'";
-    $result = mysqli_query($qry);
+    $result = mysqli_query($link, $qry);
 
     //Check whether the query was successful or not
     if ($result) {

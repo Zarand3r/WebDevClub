@@ -61,7 +61,7 @@
 	if($error==""&&$wrongcode=="")  {
 	//Create INSERT query
 	$qry = "INSERT INTO users(firstname, lastname, username, pass, email) VALUES('$fname','$lname','$username','".md5($password)."','$email')";
-	$result = @mysqli_query($qry);
+	$result = mysqli_query($link, $qry);
 
 	//Check whether the query was successful or not
 	if($result) {
