@@ -9,3 +9,4 @@ www.webdevclub.org
 
 http://webdevclub-awesometoad.rhcloud.com/
 
+transition msql to msqli in priveleges/score and news
