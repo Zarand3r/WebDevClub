@@ -4,8 +4,7 @@
   $rankindex = 1;
   $link = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_DATABASE);
   //$result = mysqli_query("SELECT * FROM users WHERE type !='T'");
-  // $result = mysqli_query($link, "SELECT * FROM users Order by score DESC");
-  $result = mysqli_query($link, "SELECT * FROM users");
+  $result = mysqli_query($link, "SELECT * FROM users Order by score DESC");
   echo "<br><br><br>";
   echo "<table style = 'border-collapse: collapse; background: white; margin:auto; width:80%; height:1800px;'>"; // start a table tag in the HTML
   echo "<thead><tr>"

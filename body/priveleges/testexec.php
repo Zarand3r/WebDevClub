@@ -24,5 +24,5 @@ if (isset($_POST['subtract'])) {
 
 if (isset($_POST['submit'])) {
     $newsource = mysql_real_escape_string($_POST['code1']);
-    mysql_query("UPDATE pagecodes SET source='$newsource' WHERE name='news'");
+    mysql_query("UPDATE pagecodes SET sourcecode='$newsource' WHERE typename='news'");
 }

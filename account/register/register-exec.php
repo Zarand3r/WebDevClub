@@ -35,7 +35,7 @@
 
 	//Check for duplicate username
 	if($username != '') {
-		$qry = "SELECT * FROM users WHERE username='$username'";
+		$qry = "SELECT * FROM users WHERE BINARY username='$username'";
 		$result = mysqli_query($link, $qry);
 		if($result) {
 			if(mysqli_num_rows($result) > 0) {
@@ -54,7 +54,7 @@
   }
 	if($error==""&&$wrongcode=="")  {
 		//Create INSERT query
-		$qry = "INSERT INTO users(fname, lname, username, pass, email) VALUES('$fname','$lname','$username','".md5($password)."','$email')";
+		$qry = "INSERT INTO users(fname, lname, username, pass, email, accountType, score) VALUES('$fname','$lname','$username','".md5($password)."','$email', 'F', 0)";
 		$result = mysqli_query($link, $qry);
 
 		//Check whether the query was successful or not
