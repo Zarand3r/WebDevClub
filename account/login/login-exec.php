@@ -58,7 +58,7 @@ if (isset($_POST['submit'])) {
             $_SESSION['SESS_LAST_NAME'] = $member['lastname'];
             $_SESSION['SESS_EMAIL_ADDRESS'] = $member['email'];
             $_SESSION['SESS_TYPE'] = $member['type'];
-            if (mysqli_num_rows(mysqli_query("SELECT * FROM active WHERE BINARY username='$username'")) == 0) {
+            if (mysqli_num_rows(mysqli_query("SELECT * FROM active WHERE username='$username'")) == 0) {
                 mysqli_query($link, "INSERT INTO active(username, timelog) VALUES('$username','$time')");
             }
             session_write_close();

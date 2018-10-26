@@ -4,4 +4,4 @@ require('../account/login/config.php');
     $username = $_SESSION['SESS_USER_NAME'];
     //$_SESSION['LAST_ACTIVITY'] = time(); // update last activity time stamp
     $last = time();
-    mysqli_query($link, "UPDATE active SET last='$last' WHERE username='$username'");
+    mysqli_query($link, "UPDATE active SET timelog='$last' WHERE username='$username'");
