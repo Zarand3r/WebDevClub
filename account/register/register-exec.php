@@ -39,22 +39,22 @@
 		$result = mysqli_query($link, $qry);
 		if($result) {
 			if(mysqli_num_rows($result) > 0) {
-                            $error = "Username Taken";
-                            session_destroy();
-                                //die("Username Taken");
-                                //header("Location:register-form.php");
+	      $error = "Username Taken";
+	      session_destroy();
+	          //die("Username Taken");
+	          //header("Location:register-form.php");
 			}
 		}
 	}
-        if($code!='')   {
-            if($code != 'helloworld$BS#1')  {
-                $wrongcode = 'Please enter the correct secret registration code';
-                session_destroy();
-            }
-        }
+  if($code!='')   {
+      if($code != 'helloworld$BS#1')  {
+          $wrongcode = 'Please enter the correct secret registration code';
+          session_destroy();
+      }
+  }
 	if($error==""&&$wrongcode=="")  {
 		//Create INSERT query
-		$qry = "INSERT INTO users(firstname, lastname, username, pass, email) VALUES('$fname','$lname','$username','".md5($password)."','$email')";
+		$qry = "INSERT INTO users(fname, lname, username, pass, email) VALUES('$fname','$lname','$username','".md5($password)."','$email')";
 		$result = mysqli_query($link, $qry);
 
 		//Check whether the query was successful or not
