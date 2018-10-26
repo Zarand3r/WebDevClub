@@ -2,10 +2,9 @@
 
  require('../Account/Login/config.php');
                 $rankindex = 1;
-                $link = mysql_connect(DB_HOST, DB_USER, DB_PASSWORD);
-                mysql_select_db(DB_DATABASE, $link);
-                //$result = mysql_query("SELECT * FROM users WHERE type !='T'");
-                $result = mysql_query("SELECT * FROM users Order by score DESC");
+                $link = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_DATABASE);
+                //$result = mysqli_query("SELECT * FROM users WHERE type !='T'");
+                $result = mysqli_query($link, "SELECT * FROM users Order by score DESC");
                 echo "<br><br><br>";
                 echo "<table style = 'border-collapse: collapse; background: white; margin:auto; width:80%; height:1800px;'>"; // start a table tag in the HTML
                 echo "<thead><tr>"
@@ -17,13 +16,13 @@
                         . "<th style = 'width:20%;'>Score</th>"
                     . "</tr></thead>";
                 echo "<tbody>";
-                while ($row = mysql_fetch_array($result)) {   //Creates a loop to loop through results
+                while ($row = mysqli_fetch_array($result)) {   //Creates a loop to loop through results
                         $username = $row['username'];
                         $status = "OFFLINE";
                         $color = "color: red;";
-                        $resultActive = mysql_query("SELECT * FROM active WHERE BINARY username='$username'");
-                        $rowActive = mysql_fetch_array($resultActive);  
-                        if(mysql_num_rows($resultActive)>0)   {
+                        $resultActive = mysqli_query("SELECT * FROM active WHERE BINARY username='$username'");
+                        $rowActive = mysqli_fetch_array($resultActive);
+                        if(mysqli_num_rows($resultActive)>0)   {
                             $status = "ONLINE";
                             $color = "color: green;";
                             if(time()-$rowActive['last']>900)   {
