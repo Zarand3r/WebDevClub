@@ -1,5 +1,6 @@
 <?php
 include('testexec.php'); // Includes Login Script
+session_start();
 if($_SESSION['SESS_TYPE']!='T') {
         header("Location: ../Denied.html");
     }
