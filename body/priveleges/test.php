@@ -1,5 +1,5 @@
 <?php
-include'testexec.php'; // Includes Login Script
+include('testexec.php'); // Includes Login Script
 if($_SESSION['SESS_TYPE']!='T') {
         header("Location: ../Denied.html");
     }
@@ -16,16 +16,16 @@ if($_SESSION['SESS_TYPE']!='T') {
 <br>
 <h1 style = "color:white; font-size: 50px; font-family: monospace; text-shadow: 5px 5px 3px midnightblue">SECRET ADMIN PAGE</h2>
 <hr>
-<br><br> 
+<br><br>
 <br>
 <table style = "width:100%; height:500px;">
     <tr>
-        <td class = "coolcell"><a class = "privelegemenu" target = "scoremanager" href = "Score.php">Score Manager</a></td> 
-        <td class = "coolcell"><a class = "privelegemenu" target = "codeeditor" href = "CodeEdit.php">Code Editor</a></td> 
+        <td class = "coolcell"><a class = "privelegemenu" target = "scoremanager" href = "Score.php">Score Manager</a></td>
+        <td class = "coolcell"><a class = "privelegemenu" target = "codeeditor" href = "CodeEdit.php">Code Editor</a></td>
     </tr>
     <tr>
-        <td class = "coolcell"><a class = "privelegemenu" target = "chatroom" href = "ChatRoom.php">Private Chat</a></td> 
-        <td class = "coolcell"><a class = "privelegemenu" href = "">COMING SOON</a></td> 
+        <td class = "coolcell"><a class = "privelegemenu" target = "chatroom" href = "ChatRoom.php">Private Chat</a></td>
+        <td class = "coolcell"><a class = "privelegemenu" href = "">COMING SOON</a></td>
     </tr>
 </table>
 </body>

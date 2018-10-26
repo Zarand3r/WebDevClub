@@ -137,7 +137,7 @@ include('detectidle.php');
                         echo "<br>";
                     }
                     ?>
-                    <p>Be sure to go to the <a href="LandingPage.php#tabs-c">chat room</a> for any questions</p>
+                    <p>Be sure to go to the <a href="landingpage.php#tabs-c">chat room</a> for any questions</p>
                     <br><br>
                     <hr>
                     <br><br>
