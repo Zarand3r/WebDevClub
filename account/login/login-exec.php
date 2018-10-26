@@ -54,8 +54,8 @@ if (isset($_POST['submit'])) {
             $member = mysqli_fetch_assoc($result);
             $_SESSION['SESS_MEMBER_ID'] = $member['id'];
             $_SESSION['SESS_USER_NAME'] = $member['username'];
-            $_SESSION['SESS_FIRST_NAME'] = $member['firstname'];
-            $_SESSION['SESS_LAST_NAME'] = $member['lastname'];
+            $_SESSION['SESS_FIRST_NAME'] = $member['fname'];
+            $_SESSION['SESS_LAST_NAME'] = $member['lname'];
             $_SESSION['SESS_EMAIL_ADDRESS'] = $member['email'];
             $_SESSION['SESS_TYPE'] = $member['accountType'];
             if (mysqli_num_rows(mysqli_query("SELECT * FROM active WHERE username='$username'")) == 0) {
